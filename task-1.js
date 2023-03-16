@@ -10,8 +10,8 @@
 
 function durationBetweenDates(currentDateStr='02 Aug 1985', endDateStr='15 Sep 1985', dimension='days') {
   
-  const currentDate = Date.parse(currentDateStr); // in ms
-  const endDate = Date.parse(endDateStr); // in ms
+  const currentDate = Date.parse(currentDateStr);
+  const endDate = Date.parse(endDateStr); 
 
   let time_dim = {
     days: 86400000,
@@ -25,7 +25,6 @@ function durationBetweenDates(currentDateStr='02 Aug 1985', endDateStr='15 Sep 1
   } else if (dimension === 'hours') {
     return (Math.round(endDate - currentDate) / time_dim.hours).toString() + ' hours'
   } else if (dimension === 'minutes') {
-    const one_minut = 1000 * 60
     return (Math.round(endDate - currentDate) / time_dim.minutes).toString() + ' minutes'
   } else if (dimension === 'seconds') {
     return (Math.round(Math.abs(endDate - currentDate)) / time_dim.seconds).toString() + ' seconds'
