@@ -7,26 +7,31 @@
 // durationBetweenDates('31 Jan 2022', '03 Feb 2021', 'days') // поверне '362 days'
 
 
+
 function durationBetweenDates(currentDateStr='02 Aug 1985', endDateStr='15 Sep 1985', dimension='days') {
   
-  const currentDate = Date.parse(currentDateStr); 
-  const endDate = Date.parse(endDateStr); 
+  const currentDate = Date.parse(currentDateStr); // in ms
+  const endDate = Date.parse(endDateStr); // in ms
 
+  let time_dim = {
+    days: 86400000,
+    hours: 3600000, 
+    minutes: 60000,
+    seconds: 1000
+  }
+  
   if (dimension === 'days') {
-    const one_day = 1000 * 60 * 60 * 24
-    return (Math.round(endDate - currentDate) / one_day).toString() + ' days'
+    return (Math.round(endDate - currentDate) / time_dim.days).toString() + ' days'
   } else if (dimension === 'hours') {
-    const one_hour = 1000 * 60 * 60
-    return (Math.round(endDate - currentDate) / one_hour).toString() + ' hours'
+    return (Math.round(endDate - currentDate) / time_dim.hours).toString() + ' hours'
   } else if (dimension === 'minutes') {
     const one_minut = 1000 * 60
-    return (Math.round(endDate - currentDate) / one_minut).toString() + ' minutes'
+    return (Math.round(endDate - currentDate) / time_dim.minutes).toString() + ' minutes'
   } else if (dimension === 'seconds') {
-    const one_second = 1000
-    return (Math.round(Math.abs(endDate - currentDate)) / one_second).toString() + ' seconds'
-  }
-  else { return 'Error' }
+    return (Math.round(Math.abs(endDate - currentDate)) / time_dim.seconds).toString() + ' seconds'
+  } else { return 'Error' }
 }
+
 const res = durationBetweenDates('14 Nov 1992', '9 Mar 1993', 'days')
 console.log(res)
 
