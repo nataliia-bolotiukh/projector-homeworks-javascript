@@ -1,30 +1,27 @@
 // Використовуючи setInterval
-function detonatorTimer(delay) {
+detonatorTimer = (delay) => {
   const timerId = setInterval(function () {
-    if (delay > 0) {
-      console.log(delay);
-    }
-    if (delay === 0) {
-      console.log("BOOM!");
+    if (delay >= 0) {
+      console.log(delay === 0 ? "BOOM!" : delay);
+    } else {
       clearInterval(timerId);
     }
     delay--;
   }, 1000);
-}
-detonatorTimer(3, 0);
+};
+
+detonatorTimer(3);
 
 
 // Використовуючи вкладений setTimeout
-function detonatorTimer(delay) {
+detonatorTimer = (delay) => {
   setTimeout(function go() {
-    if (delay > 0) {
+    if (delay >= 0) {
       setTimeout(go, 1000);
-      console.log(delay);
-    }
-    if (delay === 0) {
-      console.log("BOOM!");
+      console.log(delay === 0 ? "BOOM!" : delay);
     }
     delay--;
   }, 1000);
-}
-detonatorTimer(3, 0);
+};
+
+detonatorTimer(3);
