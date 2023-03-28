@@ -26,13 +26,12 @@ const movies = [
 ];
 function byProperty(property, direction) {
   return (a, b) => {
-    if (a[property] < b[property]) {
-      return direction === "<" ? -1 : 1;
-    }
     if (a[property] > b[property]) {
-      return direction === "<" ? 1 : -1;
+      res = 1;
+    } else {
+      res = -1;
     }
-    return 0;
+    return direction === "<" ? res : res * -1;
   };
 }
 console.log(movies.sort(byProperty('releaseYear', '>'))); // виведе масив фільмів посортованих по року випуску, від старішого до новішого*
