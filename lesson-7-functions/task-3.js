@@ -1,3 +1,4 @@
+"use strict";
 const movies = [
   {
     movieName: "The Thing",
@@ -25,6 +26,7 @@ const movies = [
   },
 ];
 function byProperty(property, direction) {
+  let res
   return (a, b) => {
     if (a[property] > b[property]) {
       res = 1;
