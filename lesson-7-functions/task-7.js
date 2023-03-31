@@ -1,3 +1,4 @@
+"use strict";
 function someFunction(a, b) {
   console.log(a + b);
 }
