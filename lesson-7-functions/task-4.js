@@ -1,4 +1,5 @@
 // Використовуючи setInterval
+"use strict";
 detonatorTimer = (delay) => {
   let del = delay;
   const timerId = setInterval(() => {
@@ -15,18 +16,15 @@ detonatorTimer(3);
 
 
 // Використовуючи вкладений setTimeout
-detonatorTimer = (delay) => {
+"use strict";
+function detonatorTimer(delay) {
   let del = delay;
-  setTimeout(
-    (go = () => {
-      if (del >= 0) {
-        setTimeout(go, 1000);
-        console.log(del === 0 ? "BOOM!" : del);
-      }
+  setTimeout(function () {
+    console.log(del === 0 ? "BOOM!" : del);
+    if (del > 0) {
       del--;
-    }),
-    1000
-  );
-};
-
+      detonatorTimer(del);
+    }
+  }, 1000);
+}
 detonatorTimer(3);
