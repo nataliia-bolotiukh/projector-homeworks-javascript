@@ -1,3 +1,4 @@
+"use strict";
 const me = {
   name: "Nataliia",
   residency: "Warszawa",
