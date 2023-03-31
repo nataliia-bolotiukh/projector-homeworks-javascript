@@ -21,11 +21,11 @@ const me = {
   },
 };
 
-let securedSelfIntroduce = me.introduce.bind(me);
+const securedSelfIntroduce = me.introduce.bind(me);
 setTimeout(securedSelfIntroduce, 1000);
 
-let securedSelfPrognose = me.prognose.bind(me);
+const securedSelfPrognose = me.prognose.bind(me);
 setTimeout(securedSelfPrognose, 2000);
 
-let securedSelfDescribeMyProfession = me.describeMyProfession.bind(me);
+const securedSelfDescribeMyProfession = me.describeMyProfession.bind(me);
 setTimeout(securedSelfDescribeMyProfession, 3000);
