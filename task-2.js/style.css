@@ -1,0 +1,14 @@
+.center {
+    position: absolute;
+    left: calc(50% - 200px);
+    top: 50%;
+    display: block;
+    width: 400px;
+    height: 30px;
+    text-align: center;
+}
+
+.btn {
+    width: 100px;
+    height: 20px;
+}
