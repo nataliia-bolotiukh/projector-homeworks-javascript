@@ -6,10 +6,8 @@ console.log(mainTitle.textContent);
 const sectionWithClass = document.querySelector(".firstSection");
 console.log(sectionWithClass.firstElementChild.textContent);
 
-const TagName = Array.from(document.getElementsByTagName("li")).filter(
-  (item) => item.textContent === "Пункт 5"
-);
-console.log(TagName[0].textContent);
+const fifth = document.querySelector("li:nth-child(5)");
+console.log(fifth);
 
 const labelWithClass = document.getElementsByClassName("hatredLevelBlock");
 console.log(labelWithClass);
