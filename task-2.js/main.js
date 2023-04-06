@@ -22,11 +22,21 @@ function formatDate(date) {
   return `${dayOfMonth}-${month}-${year} ${hour}:${minutes}:${seconds}`;
 }
 
+if (localStorage.getItem("turn_off")) {
+  title.innerHTML = localStorage.getItem("turn_off");
+}
+
 btn.addEventListener("click", (e) => {
   if (e.target.innerHTML === "Turn off") {
     e.target.innerHTML = "Turn on";
     body.style = "background-color:gray";
-    title.innerHTML = `Last turn off: ${formatDate(new Date())}`;
+
+    localStorage.setItem(
+      "turn_off",
+      `Last turn off: ${formatDate(new Date())}`
+    );
+
+    title.innerHTML = localStorage.getItem("turn_off");
   } else {
     e.target.innerHTML = "Turn off";
     body.style = "background-color:white";
