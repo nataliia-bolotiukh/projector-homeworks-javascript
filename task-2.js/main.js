@@ -5,12 +5,12 @@ const body = document.querySelector("body");
 const title = document.querySelector(".title");
 
 function formatDate(date) {
-  const dayOfMonth = date.getDate();
-  const month = date.getMonth() + 1;
-  const year = date.getFullYear();
-  const hour = date.getHours();
-  const minutes = date.getMinutes();
-  const seconds = date.getSeconds();
+  let dayOfMonth = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+  let hour = date.getHours();
+  let minutes = date.getMinutes();
+  let seconds = date.getSeconds();
 
   year = year.toString().slice(-2);
   month = month < 10 ? "0" + month : month;
