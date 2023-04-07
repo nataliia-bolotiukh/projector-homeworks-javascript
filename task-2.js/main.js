@@ -1,4 +1,4 @@
-`use strict`;
+'use strict';
 
 const btn = document.querySelector(".btn");
 const body = document.querySelector("body");
